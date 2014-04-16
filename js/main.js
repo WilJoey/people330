@@ -1,4 +1,4 @@
-﻿var drawingManager;
+var drawingManager;
 var selectedShape;
 var gmap;
 var shapes = [];
@@ -63,7 +63,8 @@ function initialize() {
         }
         var pp = parseFloat(document.getElementById('people-text').value);
         var total = parseInt(sum * pp);
-        console.log("面積：" + sum + " 平方公尺，總計約：" + total + " 人。");
+        //console.log("面積：" + sum + " 平方公尺，總計約：" + total + " 人。");
+        $("#dvInfo").html("面積：" + Math.round(sum * 100) / 100 + " 平方公尺<br/>總計約：" + total + " 人。");
     });
     google.maps.event.addDomListener(document.getElementById('clear-button'), 'click', clearShapes);
     google.maps.event.addDomListener(document.getElementById('sample-button'), 'click', loadSampleShapes);
@@ -130,4 +131,16 @@ function createPolygon(polygon) {
     });
     polygon.setMap(gmap);
     shapes.push(polygon);
+}
+
+function getselectedShapePath() {
+    var path2 = [];
+    var a = selectedShape.getPath();
+    a.forEach(function(d, i) {
+        path2.push({
+            "lat": d.lat(),
+            "lng": d.lng()
+        });
+    });
+    return JSON.stringify(path2);
 }

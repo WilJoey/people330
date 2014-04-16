@@ -50,3 +50,11 @@ ul li {
 li {
   margin:10px 2px;
 }
+
+#dvInfo {
+  background-color: #EEE; 
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px;
+  color: #A00
+}

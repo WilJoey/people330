@@ -106,16 +106,3 @@
         "lng": 120.24165987968445
     }]
 ];
-
-// function getShapeNodes() {
-//     var path2 = [];
-//     var a = selectedShape.getPath();
-//     a.forEach(function(d, i) {
-//         path2.push({
-//             "lat": d.lat(),
-//             "lng": d.lng()
-//         });
-//     });
-//     console.log(JSON.stringify(path2));
-//     return path2;
-// }
